@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+
+  }
+  
+
+.navbar {
+    padding: 10px 20px;
+    position: relative;
+  }
+  
+  /* Barre bleue qui commence après le logo et s'étend à droite */
+  .nav-background {
+    position: absolute;
+    top: 0;
+    left: 120px; /* Décale la barre pour qu'elle commence après le logo */
+    width: calc(100% - 120px); /* Ajuste la largeur */
+    height: 100%;
+    background-color: #007BFF;
+    border-radius: 0 0 0 90px; /* Arrondi à gauche */
+    z-index: 0;
+  }
+  
+  /* Assurer que le logo est visible au-dessus de la barre bleue */
+  .logo-container {
+    padding: 5px 0px;
+    right: 15px;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  /* Navigation */
+  .nav-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar-nav .nav-item {
+    margin: 0 140px; 
+  }
+  
+  .profile-icon {
+    position: absolute;
+    top: 50%; 
+    right: 30px; 
+    transform: translateY(-50%); 
+    z-index: 1; 
+}
+
+
+  .profile-icon img {
+    height: 30px;
+    cursor: pointer;
+    width: auto;
+  }

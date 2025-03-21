@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ajout des polices */
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+  }
+  

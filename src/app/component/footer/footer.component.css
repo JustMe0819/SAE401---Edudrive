@@ -1,0 +1,30 @@
+footer {
+    position: relative; /* Maintient sa structure */
+  }
+  
+  footer a {
+    text-decoration: none;
+  }
+  
+  footer .ic {
+    font-size: 1.5rem;
+  }
+  
+  .bg {
+    background-color: #2B63A0;
+  }
+  
+  .bg-copy {
+    background-color: #2D3D4D;
+    width: 100vw; /* Force la largeur totale à l'écran */
+    padding-left: 50px
+  }
+  
+  .font {
+    font-style: italic;
+  }
+
+  footer .row:first-child {
+    margin-bottom: 15px; /* Espacement entre la première section et copyright */
+  }
+  
