@@ -43,6 +43,16 @@
   color: white;
 }
 
+.button:hover {
+  background-color: #92C7FF;
+  color: black;
+}
+
+.button:active {
+  background-color: #31557A;
+  color: white;
+}
+
 .calendar {
   width: 100%;
 }

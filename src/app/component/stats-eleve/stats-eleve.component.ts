@@ -16,14 +16,14 @@ export class StatsEleveComponent implements AfterViewInit {
   public lineChartOptions: ChartOptions = {
     responsive: true,
     plugins: {
-      legend: { display: true }
+    legend: { display: true }
     }
   };
 
   public lineChartData: ChartData<'line'> = {
     labels: ['Test9', 'Test8', 'Test7', 'Test6', 'Test5', 'Test4', 'Test3', 'Test2', 'Test1'], 
     datasets: [
-      { data: [15, 21, 20, 29, 29, 33, 30, 35, 36], label: 'Tests complets', borderColor: 'blue' },
+      { data: [15, 21, 20, 29, 29, 33, 30, 35, 36], label: 'Tests complets', borderColor: 'blue'},
       { data: [11, 9, 15, 18, 14, 16, 19, 20, 18], label: 'Séries thématiques', borderColor: '#FF8000' }
     ]
   };

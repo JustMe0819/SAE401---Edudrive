@@ -14,6 +14,7 @@
   <div class="row mt-4">
     <!-- Graphique -->
     <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+      <p>Code de la route</p>
       <div class="chart-container">
         <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="lineChartType"></canvas>
       </div>
@@ -22,12 +23,13 @@
 
     <!-- Calendrier -->
     <div class="col-md-6">
+      <p>Permis de conduire</p>
       <div class="container bg">
         <div id="calendar"></div>
         <br>
         <p class="calendar-description">"Votre prochaine heure de conduite est le 22 mars à 10h avec M. Dupont"</p>
       </div>
-      <button class="btn button ">Accéder à mes sessions</button>
+      <button class="btn button">Accéder à mes sessions</button>
     </div>
   </div>
 
