@@ -9,6 +9,8 @@ import { HeaderFormateurComponent } from './component/header-formateur/header-fo
 import { NgChartsModule } from 'ng2-charts';
 import { StatsEleveComponent } from './component/stats-eleve/stats-eleve.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { AccueilComponent } from './component/accueil/accueil.component';
+import { FormConnexionEleveComponent } from './component/form-connexion-eleve/form-connexion-eleve.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FooterComponent } from './component/footer/footer.component';
     HeaderComponent,
     HeaderFormateurComponent,
     StatsEleveComponent,
-    FooterComponent
+    FooterComponent,
+    AccueilComponent,
+    FormConnexionEleveComponent
   ],
   imports: [
     BrowserModule,

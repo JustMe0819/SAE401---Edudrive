@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg position-relative">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand logo-container position-relative active" href="#">
+        <img src="Img/logo-bureau.png" alt="Logo Edudrive" class="logo">
+      </a>
+
+      <div class="nav-background"></div>
+
+      <a class="nav-link text-white txt position-absolute" (click)="scrollToConnexion()">Se connecter</a>
+      
+  </div>
+</nav>
+
+
+  <header class="info-section text-center py-5">
+    <br><br><br>
+    <h1 class="fw-bold"><span class="text-primary">E</span>dudrive</h1>
+      <p class="lead">est une plateforme offrant des outils pour le suivi <br>
+        des formations et des statistiques sur les différents parcours.</p>
+        <br><br>
+        <p style="font-style: italic;">Plus de 6 000 auto-écoles partenaires et 500 000 élèves inscrits</p>
+  </header>
+
+  <div class="content-section" id="connexion-section">
+    <br>
+    <p class="bold">Merci de bien choisir votre accès en fonction de votre profil.</p>
+    <br>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <!-- Carte Étudiant -->
+        <div class="col-md-5">
+          <div class="card auth-card orange">
+            <div class="card-body text-center">
+              <p class="card-title"><img class="icone" src="Img/eleve.png" alt="eleve"><p>
+              <p class="card-text bold">Vous êtes étudiant.e ?</p>
+              <p class="card-text">Accédez à votre espace étudiant.</p>
+              <br><br><br><br><br><br><br><br><br><br><br>
+              <button class="btn auth-btn mt-4" [routerLink]="['/login-eleve']">Se connecter</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1"></div>
+        <br>
+        
+        <!-- Carte Formateur -->
+        <div class="col-md-5">
+          <div class="card auth-card blue">
+            <div class="card-body text-center">
+              <p class="card-title"><img class="icone" src="Img/formateur.png" alt="formateur"><p>
+              <p class="card-text bold">Vous êtes formateur.trice ?</p>
+              <p class="card-text">Gérez vos formations en toute simplicité.</p>
+              <br><br><br><br><br><br><br><br><br>
+              <div class="d-flex flex-column align-items-center gap-2">
+                <button class="btn auth-btn mt-4">S'inscrire</button>
+                <button class="btn auth-btn">Se connecter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <app-footer></app-footer>

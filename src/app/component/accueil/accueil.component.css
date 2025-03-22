@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  .nav-background {
+    position: absolute;
+    right: 0;
+    width: calc(15%); 
+    height: 80%;
+    top: 0;
+    background-color: #007BFF;
+    border-radius: 0 0 0 90px;
+  }
+  
+
+  .logo-container {
+    padding: 0px 0px;
+    right: 15px;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .logo {
+    height: 80px;
+  }
+  
+  .txt {
+    position: absolute;
+    right: 40px;
+    top: 40%;
+    transform: translateY(-50%);
+    font-weight: 900;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .info-section {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    background: url('../../../Img/fond-1.png') no-repeat center center/cover;
+    z-index: -1;
+    margin-top: -100px; 
+  }
+
+  .content-section {
+    padding: 20px;
+    z-index: 1; 
+    background-color: #1D3557; 
+    color: white;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.auth-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    color: white;
+    padding: 10px 10px;
+  }
+  
+  .auth-btn {
+    padding: 5px 10px;
+    background-color:  #3F454B;
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .auth-btn:hover {
+    transform: scale(1.05);
+    background-color: #2A2D30;
+  }
+
+  .auth-btn:active {
+    background-color: #1D2023;
+  }
+  
+  .orange {
+    background-color: #FF8000;
+  }
+
+  .blue {
+    background-color: #007BFF;
+  }
+
+/* Ajout d'espacement entre le texte et les boutons */
+.auth-card .card-body p {
+    margin-bottom: 20px; /* Espace entre le texte et les boutons */
+  }
+  
+  .auth-btn {
+    padding: 12px 20px; /* Augmente la taille du bouton */
+    background-color:  #3F454B;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    width: 200px; 
+  }
+  
+  .auth-btn:hover {
+    transform: scale(1.05);
+    background-color: #2A2D30;
+  }
+  
+  .auth-btn:active {
+    background-color: #1D2023;
+  }
+
+  .icone {
+    width: 50px; 
+    height: auto;
+  }
+  
