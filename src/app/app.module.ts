@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,11 +23,14 @@ import { FormConnexionEleveComponent } from './component/form-connexion-eleve/fo
     AccueilComponent,
     FormConnexionEleveComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgChartsModule
+    NgChartsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

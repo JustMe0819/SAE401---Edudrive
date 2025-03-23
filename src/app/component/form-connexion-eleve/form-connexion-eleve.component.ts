@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-connexion-eleve',
@@ -8,9 +9,25 @@ import { Router } from '@angular/router';
   styleUrl: './form-connexion-eleve.component.css'
 })
 export class FormConnexionEleveComponent {
-  constructor(private router: Router) {}
+
+  loginForm: FormGroup;
+  showPassword: boolean = false;
+
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.loginForm = this.fb.group({
+      neph: [''],
+      password: [''],
+      remember: [false]
+    });
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
 
   goToAccueilEleve() {
     this.router.navigate(['/page-acceuil-eleve']);
   }
 }
+

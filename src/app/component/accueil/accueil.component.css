@@ -70,22 +70,7 @@
     color: white;
     padding: 10px 10px;
   }
-  
-  .auth-btn {
-    padding: 5px 10px;
-    background-color:  #3F454B;
-    color: white;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .auth-btn:hover {
-    transform: scale(1.05);
-    background-color: #2A2D30;
-  }
 
-  .auth-btn:active {
-    background-color: #1D2023;
-  }
   
   .orange {
     background-color: #FF8000;
@@ -101,7 +86,7 @@
   }
   
   .auth-btn {
-    padding: 12px 20px; /* Augmente la taille du bouton */
+    padding: 12px 20px; 
     background-color:  #3F454B;
     color: white;
     transition: all 0.3s ease-in-out;
