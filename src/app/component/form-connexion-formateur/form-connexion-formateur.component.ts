@@ -27,7 +27,7 @@ export class FormConnexionFormateurComponent {
   }
 
 
-  goToAccueilEleve() {
-    this.router.navigate(['/page-acceuil-eleve']);
+  goToAccueilFormateur() {
+    this.router.navigate(['/page-accueil-formateur']);
   }
 }

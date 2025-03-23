@@ -27,7 +27,7 @@ export class FormConnexionEleveComponent {
 
 
   goToAccueilEleve() {
-    this.router.navigate(['/page-acceuil-eleve']);
+    this.router.navigate(['/page-accueil-eleve']);
   }
 }
 
