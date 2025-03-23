@@ -12,6 +12,9 @@ import { StatsEleveComponent } from './component/stats-eleve/stats-eleve.compone
 import { FooterComponent } from './component/footer/footer.component';
 import { AccueilComponent } from './component/accueil/accueil.component';
 import { FormConnexionEleveComponent } from './component/form-connexion-eleve/form-connexion-eleve.component';
+import { FormInscriptionFormateurComponent } from './component/form-inscription-formateur/form-inscription-formateur.component';
+import { FormConnexionFormateurComponent } from './component/form-connexion-formateur/form-connexion-formateur.component';
+import { StatsFormateurComponent } from './component/stats-formateur/stats-formateur.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { FormConnexionEleveComponent } from './component/form-connexion-eleve/fo
     StatsEleveComponent,
     FooterComponent,
     AccueilComponent,
-    FormConnexionEleveComponent
+    FormConnexionEleveComponent,
+    FormInscriptionFormateurComponent,
+    FormConnexionFormateurComponent,
+    StatsFormateurComponent
   ],
 
   imports: [

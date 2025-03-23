@@ -6,6 +6,8 @@ import { StatsEleveComponent } from './component/stats-eleve/stats-eleve.compone
 import { FooterComponent } from './component/footer/footer.component';
 import { AccueilComponent } from './component/accueil/accueil.component';
 import { FormConnexionEleveComponent } from './component/form-connexion-eleve/form-connexion-eleve.component';
+import { FormInscriptionFormateurComponent } from './component/form-inscription-formateur/form-inscription-formateur.component';
+import { FormConnexionFormateurComponent } from './component/form-connexion-formateur/form-connexion-formateur.component';
 
 const routes: Routes = [
   {path: "header", component: HeaderComponent},
@@ -14,7 +16,9 @@ const routes: Routes = [
   {path: "footer", component: FooterComponent},
   {path: "Edudrive", component: AccueilComponent},
   {path: "", component: AccueilComponent},
-  {path: "login-eleve", component: FormConnexionEleveComponent}
+  {path: "login-eleve", component: FormConnexionEleveComponent},
+  {path: "inscription-formateur", component: FormInscriptionFormateurComponent},
+  {path: "login-formateur", component: FormConnexionFormateurComponent}
 ];
 
 @NgModule({

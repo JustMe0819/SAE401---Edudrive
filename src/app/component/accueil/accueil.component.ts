@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class AccueilComponent {
   constructor(private router: Router) {}
 
-  // Méthode pour rediriger vers le formulaire de connexion
   goToLogin() {
     this.router.navigate(['/login-eleve']);
   }

@@ -1,0 +1,68 @@
+body {
+    background: url('../../../Img/fond2.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.login-card {
+    background: #2B63A0;
+    border-radius: 15px;
+    color: white;
+    width: 350px;
+}
+
+.logo {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.input-group-text {
+    background: white;
+    border: none;
+}
+
+.span:hover {
+    background: #92C7FF;
+    cursor: pointer;
+}
+
+.form-control {
+    border-left: none;
+}
+
+.button {
+    padding: 12px 20px;
+    background-color: #3F454B;
+    color: white;
+    width: 200px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #2A2D30;
+}
+
+.button:active {
+    background-color: #1D2023;
+}
+
+/* Mot de passe oublié */
+small {
+    font-style: italic;
+    color: white;
+    text-decoration: none;
+}
+
+/* Animation icône œil */
+.password-toggle {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.password-toggle:hover {
+    transform: scale(1.1);
+}
