@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg position-relative">
-    <div class="container-fluid">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
       
-      <a class="navbar-brand logo-container position-relative active" href="#">
+      <a class="navbar-brand" href="#">
         <img src="Img/logo-bureau.png" alt="Logo Edudrive" class="logo">
       </a>
 
-      <div class="nav-background"></div>
-
-      <a class="nav-link text-white txt position-absolute" (click)="scrollToConnexion()">Se connecter</a>
+      <div class="nav-background d-flex justify-content-center align-items-center">
+        <a class="nav-link text-white txt" (click)="scrollToConnexion()">Se connecter</a>
+      </div>
       
   </div>
 </nav>
@@ -27,9 +27,7 @@
     <p class="bold">Merci de bien choisir votre accès en fonction de votre profil.</p>
     <br>
 
-    <div class="container mt-5">
-
-      <div class="row justify-content-center">
+      <div class="row justify-content-center my-5">
         <!-- Carte Étudiant -->
         <div class="col-md-5">
           <div class="card auth-card orange">
@@ -59,7 +57,6 @@
                 <button class="btn auth-btn" [routerLink]="'/login-formateur'">Connexion</button>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
