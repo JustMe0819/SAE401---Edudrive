@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-form-connexion-eleve',
@@ -12,11 +13,12 @@ export class FormConnexionEleveComponent {
 
   loginForm: FormGroup;
   showPassword: boolean = false;
+  message: string = ''; // Déclaration de la variable message
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.loginForm = this.fb.group({
-      neph: [''],
-      password: [''],
+      neph: ['', [Validators.required]],
+      password: ['', [Validators.required]],
       remember: [false]
     });
   }
@@ -25,9 +27,21 @@ export class FormConnexionEleveComponent {
     this.showPassword = !this.showPassword;
   }
 
+  onSubmit() {
+    if (this.loginForm.valid) {
+      const { neph, password } = this.loginForm.value;
 
-  goToAccueilEleve() {
-    this.router.navigate(['/page-accueil-eleve']);
+      this.authService.login(neph, password).subscribe(
+        response => {
+          this.message = ''; // Effacer le message précédent
+          this.router.navigate(['/page-accueil-eleve']); // Redirection après connexion réussie
+        },
+        error => {
+          this.message = 'Numéro NEPH ou mot de passe incorrect'; // Message d'erreur
+        }
+      );
+    } else {
+      this.message = 'Veuillez remplir tous les champs'; // Message d'erreur si le formulaire est invalide
+    }
   }
 }
-

@@ -8,7 +8,7 @@
 
       <h2 class="text-center fw-bold">Se connecter</h2>
 
-      <form [formGroup]="loginForm">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group mt-3">
           <label for="neph">Numéro NEPH</label>
           <div class="input-group">
@@ -36,9 +36,14 @@
         </div>
 <br>
         <div class="text-center mt-3">
-          <button type="submit" class="btn button" (click)="goToAccueilEleve()">Se connecter</button>
+          <button type="submit" class="btn button">Se connecter</button>
         </div>
       </form>
+
+      <div *ngIf="message" class="alert alert-danger mt-3">
+        {{ message }}
+      </div>
+
     </div>
   </div>
 </body>

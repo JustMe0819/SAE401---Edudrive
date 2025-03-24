@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts'; // Importation de ChartsModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderFormateurComponent } from './component/header-formateur/header-formateur.component';
-import { NgChartsModule } from 'ng2-charts';
 import { StatsEleveComponent } from './component/stats-eleve/stats-eleve.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { AccueilComponent } from './component/accueil/accueil.component';
@@ -34,11 +35,11 @@ import { StatsFormateurComponent } from './component/stats-formateur/stats-forma
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgChartsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgChartsModule 
   ],
-  providers: [],
+  providers: [provideHttpClient()], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
