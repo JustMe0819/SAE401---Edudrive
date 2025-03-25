@@ -16,11 +16,27 @@ class FormateurController
             $data = [
                 'id_auto_ecole' => $_POST['id_auto_ecole'] ?? null,
                 'nom' => $_POST['nom'] ?? '',
-                'prenom' => $_POST['prenom'] ?? ''
+                'prenom' => $_POST['prenom'] ?? '',
+                'email' => $_POST['email'] ?? '',
+                'password' => $_POST['password'] ?? ''
             ];
 
+            $existingFormateur = $this->formateurModel->getByEmail($data['email']);
+            if ($existingFormateur) {
+                http_response_code(400);
+                echo json_encode(['error' => 'Cet email est déjà utilisé.']);
+                return;
+            }
+    
+            if (empty($data['nom']) || empty($data['prenom']) || empty($data['email']) || empty($data['password'])) {
+                http_response_code(400);
+                echo json_encode(['error' => 'Veuillez remplir tous les champs du formulaire.']);
+                return;
+            }
+    
             try {
                 $this->formateurModel->create($data);
+                $_SESSION['formateur'] = $data; // Mettre dans la session
                 http_response_code(201);
                 echo json_encode(['message' => 'Formateur créé avec succès']);
             } catch (Exception $e) {

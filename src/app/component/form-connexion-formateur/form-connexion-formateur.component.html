@@ -10,10 +10,10 @@
   
         <form [formGroup]="loginForm">
           <div class="form-group mt-3">
-            <label for="id">Identifiant</label>
+            <label for="email">Adresse email</label>
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
-              <input type="text" class="form-control" id="id" placeholder="Votre identifiant (prenom.nom)" formControlName="id" required>
+              <input type="email" class="form-control" id="email" placeholder="Votre identifiant (prenom.nom)" formControlName="mail" required>
             </div>
           </div>
   
@@ -22,7 +22,7 @@
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-lock"></i></span>
               <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="password" placeholder="Mot de passe" formControlName="password" required>
-              <span class="input-group-text password-toggle" (click)="togglePasswordVisibility()">
+              <span class="input-group-text password-toggle span" (click)="togglePasswordVisibility()">
                 <i class="fas" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
               </span>
             </div>
@@ -36,7 +36,7 @@
           </div>
   <br>
           <div class="text-center mt-3">
-            <button type="submit" class="btn button" (click)="goToAccueilFormateur()">Se connecter</button>
+            <button type="submit" class="btn button">Se connecter</button>
           </div>
         </form>
       </div>

@@ -25,7 +25,7 @@ body {
     border: none;
 }
 
-.input-group-text:hover {
+.span:hover {
     background: #92C7FF;
     cursor: pointer;
 }

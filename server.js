@@ -34,8 +34,37 @@ app.post('/login', (req, res) => {
   }
 });
 
-// Démarrer le serveur
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Serveur en cours d'exécution sur http://localhost:${PORT}`);
-});
+app.post('/inscription-formateur', async (req, res) => {
+    const { email, password, nom, prenom } = req.body;
+  
+    // Vérifier si l'email existe déjà
+    const existingFormateur = formateurs.find(f => f.email === email);
+    if (existingFormateur) {
+      return res.status(400).json({ message: 'Cet email est déjà utilisé' });
+    }
+  
+    // Hachage du mot de passe
+    const hashedPassword = await bcrypt.hash(password, 10);
+  
+    // Ajouter le formateur à la base de données simulée
+    formateurs.push({ email, password: hashedPassword, nom, prenom });
+    res.status(201).json({ message: 'Inscription réussie' });
+  });
+  
+  // Route de connexion du formateur
+  app.post('/login-formateur', (req, res) => {
+    const { email, password } = req.body;
+    const formateur = formateurs.find(f => f.email === email);
+  
+    if (formateur && bcrypt.compareSync(password, formateur.password)) {
+      res.status(200).json({ message: 'Connexion réussie' });
+    } else {
+      res.status(401).json({ message: 'Email ou mot de passe incorrect' });
+    }
+  });
+  
+  // Démarrer le serveur
+  const PORT = 3000;
+  app.listen(PORT, () => {
+    console.log(`Serveur en cours d'exécution sur http://localhost:${PORT}`);
+  });

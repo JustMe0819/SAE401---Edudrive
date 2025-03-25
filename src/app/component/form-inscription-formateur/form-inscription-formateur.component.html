@@ -1,74 +1,86 @@
 <body>
-    <div class="login-container d-flex justify-content-center align-items-center vh-100 flex-column">
-  
-      <!-- Logo Centré -->
-      <img src="/Img/logo-bureau.png" alt="Logo Edudrive" class="logo mb-3">
-  
-      <div class="login-card p-4 shadow">
-  
-        <h2 class="text-center fw-bold">S'inscrire</h2>
-  
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-          <div class="form-group mt-3">
-            <label for="nom">Nom</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-id-card"></i></span>
-              <input type="text" class="form-control" id="nom" placeholder="Votre nom" formControlName="nom" required>
-            </div>
-          </div>
-          <div class="form-group mt-3">
-            <label for="prenom">Prénom</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
-              <input type="text" class="form-control" id="prenom" placeholder="Votre prénom" formControlName="prenom" required>
-            </div>
-          </div>
-          <div class="form-group mt-3">
-            <label for="email">E-mail</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-              <input type="email" class="form-control" id="email" placeholder="Votre email" formControlName="email" required>
-            </div>
-          </div>
-          <div class="form-group mt-3">
-            <label for="autoecole">Mon auto-école</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-school"></i></span>
-              <input type="text" class="form-control" id="autoecole" placeholder="Votre auto-école" formControlName="autoecole" required>
-            </div>
-          </div>
-  
-          <div class="form-group mt-3">
-            <label for="password">Mot de passe (minimum 6 caractères)</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-lock"></i></span>
-              <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="password" placeholder="Mot de passe" formControlName="password" required>
-              <span class="input-group-text password-toggle span" (click)="togglePasswordVisibility('password')">
-                <i class="fas" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-              </span>
-            </div>
-          </div>
-          <div class="form-group mt-3">
-            <label for="password">Verifier mon mot de passe</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-lock"></i></span>
-              <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control" id="confirmPassword" placeholder="Confirmez le mot de passe" formControlName="confirmPassword" required>
-      <span class="input-group-text password-toggle span" (click)="togglePasswordVisibility('confirmPassword')">
-        <i class="fas" [ngClass]="{'fa-eye': !showConfirmPassword, 'fa-eye-slash': showConfirmPassword}"></i>
-      </span>
-            
-            </div>
-            <br>
-            <div *ngIf="loginForm.get('confirmPassword')?.hasError('noMatch')" class="bg-danger text-white rounded">
-              Les mots de passe ne correspondent pas.
-            </div>
-          </div>
-  <br>
-  <div class="text-center mt-3">
-    <button type="submit" class="btn button" [disabled]="loginForm.invalid">S'inscrire</button>
-  </div>
-        </form>
+  <div class="login-container d-flex justify-content-center align-items-center vh-100 flex-column">
+
+    <!-- Logo Centré -->
+    <img src="/Img/logo-bureau.png" alt="Logo Edudrive" class="logo mb-3">
+
+    <div class="login-card p-4 shadow">
+
+      <h2 class="text-center fw-bold">S'inscrire</h2>
+
+      <!-- Message d'erreur -->
+      <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+        {{ errorMessage }}
       </div>
+
+      <form [formGroup]="registerForm" method="POST" action="api.php">
+        <div class="form-group mt-3">
+          <label for="nom">Nom</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+            <input type="text" class="form-control" id="nom" placeholder="Votre nom" formControlName="nom" required>
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="prenom">Prénom</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input type="text" class="form-control" id="prenom" placeholder="Votre prénom" formControlName="prenom" required>
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="email">E-mail</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            <input type="email" class="form-control" id="email" placeholder="Votre email" formControlName="email" required>
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="autoecole">Mon auto-école</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-school"></i></span>
+            <input type="text" class="form-control" id="autoecole" placeholder="Votre auto-école" formControlName="autoecole" required>
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="password">Mot de passe (minimum 6 caractères)</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="password" placeholder="Mot de passe" formControlName="password" required>
+            <span class="input-group-text password-toggle span" (click)="togglePasswordVisibility('password')">
+              <i class="fas" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="confirmPassword">Vérifier mon mot de passe</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control" id="confirmPassword" placeholder="Confirmez le mot de passe" formControlName="confirmPassword" required>
+            <span class="input-group-text password-toggle span" (click)="togglePasswordVisibility('confirmPassword')">
+              <i class="fas" [ngClass]="{'fa-eye': !showConfirmPassword, 'fa-eye-slash': showConfirmPassword}"></i>
+            </span>
+          </div>
+          <br>
+          <div *ngIf="registerForm.get('confirmPassword')?.hasError('noMatch')" class="bg-danger text-white rounded p-1">
+            Les mots de passe ne correspondent pas.
+          </div>
+        </div>
+
+        <div *ngIf="registerForm.invalid && registerForm.touched" class="alert alert-danger mt-3">
+          Veuillez remplir tous les champs obligatoires.
+        </div>
+
+        <br>
+        <div class="text-center mt-3">
+          <button type="submit" class="btn button">S'inscrire</button>
+        </div>
+      </form>
     </div>
-  </body>
-  
+  </div>
+</body>
